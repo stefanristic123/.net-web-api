@@ -1,4 +1,5 @@
 using API.Data;
+using API.Helpers;
 using Core.Interfaces;
 using Infrastructure.Data;
 using Infrastructure.Data.Repository;
@@ -18,6 +19,8 @@ builder.Services.AddDbContext<StoreContext>(opt =>
 });
 
 builder.Services.AddScoped<IProductRepository, ProductRepository>();
+builder.Services.AddScoped(typeof(IGenericRepository<>), typeof(GenericRepository<>));
+builder.Services.AddAutoMapper(typeof(MappingProfiles));
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
@@ -30,6 +33,7 @@ if (app.Environment.IsDevelopment())
 app.UseHttpsRedirection();
    
 app.UseAuthorization();
+app.UseStaticFiles();
 
 app.MapControllers();
 
