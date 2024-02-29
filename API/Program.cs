@@ -13,9 +13,9 @@ var builder = WebApplication.CreateBuilder(args);
 
 builder.Services.AddControllers();
 builder.Services.AddApplicationServices(builder.Configuration);
-app.UseCors("CorsPolicy");
 
 var app = builder.Build();
+app.UseCors("CorsPolicy");
 
 // Configure the HTTP request pipeline.
 app.UseMiddleware<ExceptionMiddleware>();
