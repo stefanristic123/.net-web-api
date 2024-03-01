@@ -69,7 +69,7 @@ export class ShopComponent {
     this.getProducts();
   }
 
-  onSortSelected(event: any) {
+  onSortSelected(event: any) { 
     this.shopParams.sort = event.target.value;
     this.getProducts();
   }
