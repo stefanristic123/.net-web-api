@@ -1,6 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Component } from '@angular/core';
-import { environment } from '../../../enviorments/enviorment';
+import { environment } from '../../../../enviorments/enviorment';
 
 @Component({
   selector: 'app-test-error',
