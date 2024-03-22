@@ -52,3 +52,11 @@ catch (Exception ex)
     logger.LogError(ex, "An error occured during migration");
 }
 app.Run();
+
+// Add Migrations
+// dotnet ef migrations add OrderEntityAdded -p Infrastructure -s API -c StoreContext
+                                        // specifay the project
+                                                            // specifay the starter project
+                                                                        // specifay the context
+
+// dotnet ef database drop -p Infrastructure -s API -c StoreContext
